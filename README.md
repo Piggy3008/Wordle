@@ -19,4 +19,5 @@ This is a desktop Wordle (Unlimited) implementation using Python and Tkinter.
 
 ## Video demo
 
-You can watch how the game can be played through this video URL [https://drive.google.com/file/d/1MmWY-qIbs73KmXWu7lygy-ahF1rncRMK/view]
+You can watch how the game can be played through this video URL
+https://drive.google.com/file/d/1MmWY-qIbs73KmXWu7lygy-ahF1rncRMK/view
