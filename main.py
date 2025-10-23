@@ -178,6 +178,7 @@ class WordleApp(tk.Tk):
         self.attempt = 0
         self.current_guess = ""
         self.secret = random.choice(WORD_LIST)
+        print(f"[DEBUG] Secret word is: {self.secret}")
         self.locked = False
         for r in range(MAX_ATTEMPTS):
             for c in range(WORD_LENGTH):
@@ -192,4 +193,3 @@ class WordleApp(tk.Tk):
 if __name__ == "__main__":
     app = WordleApp()
     app.mainloop()
-    
