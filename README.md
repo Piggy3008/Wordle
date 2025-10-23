@@ -1,4 +1,4 @@
-# Wordle Unlimited (Tkinter)
+# Wordle
 
 This is a desktop Wordle (Unlimited) implementation using Python and Tkinter.
 
@@ -22,3 +22,8 @@ This is a desktop Wordle (Unlimited) implementation using Python and Tkinter.
 
 ## Notes on submission
 The original assignment requested that resource files (dictionaries, icons, etc.) are **not** included in the submission zip. If you want to use a larger dictionary, upload `words.txt` to a cloud drive and include download instructions in `README.md`. This implementation uses a small embedded word list by default to keep the submission lightweight.
+
+## Video demo
+
+You can watch how the game can be played through this video URL
+
