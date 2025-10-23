@@ -14,8 +14,8 @@ def load_word_list():
                 w = line.strip().lower()
                 if len(w) == WORD_LENGTH and w.isalpha():
                     words.append(w)
-        if words:
-            return words
+        
+    return words
 
 WORD_LIST = load_word_list()
 
@@ -30,12 +30,13 @@ class WordleApp(tk.Tk):
         self.current_guess = ""
         self.grid_labels = []
         self.secret = random.choice(WORD_LIST)
+        print(f"[DEBUG] Secret word is: {self.secret}")
         self.locked = False
 
         # Header
         ctrl_frame = tk.Frame(self)
         ctrl_frame.pack(pady=(0,10), fill="x")
-        self.info_label = tk.Label(ctrl_frame, text="Guess the 5-letter word!", font=("Helvetica", 12))
+        self.info_label = tk.Label(ctrl_frame, text="Guess the 5-letter word!", font=("Arial", 12))
         self.info_label.pack(side="left")
         tk.Button(ctrl_frame, text="New Game", command=self.new_game).pack(side="right")
 
@@ -46,7 +47,7 @@ class WordleApp(tk.Tk):
             row = []
             for c in range(WORD_LENGTH):
                 lbl = tk.Label(grid_frame, text=" ", width=4, height=2, relief="solid", borderwidth=2,
-                               font=("Helvetica", 18), bg="white")
+                               font=("Arial", 18), bg="white")
                 lbl.grid(row=r, column=c, padx=4, pady=4)
                 row.append(lbl)
             self.grid_labels.append(row)
@@ -121,13 +122,13 @@ class WordleApp(tk.Tk):
         feedback = ["absent"] * WORD_LENGTH
         secret_chars = list(self.secret)
 
-        # Green pass
+        # Green letters
         for i in range(WORD_LENGTH):
             if guess[i] == secret_chars[i]:
                 feedback[i] = "correct"
                 secret_chars[i] = None
 
-        # Yellow pass
+        # Yellow letters
         for i in range(WORD_LENGTH):
             if feedback[i] == "correct":
                 continue
@@ -135,11 +136,11 @@ class WordleApp(tk.Tk):
                 feedback[i] = "present"
                 secret_chars[secret_chars.index(guess[i])] = None
 
-        # Apply feedback to grid and keyboard
+        # Change the colors of the guessed letters and keyboard
         for i, fb in enumerate(feedback):
             lbl = self.grid_labels[row][i]
             letter = guess[i].upper()
-            color = "#787c7e"  # gray
+            color = "#787c7e"  
             if fb == "correct":
                 color = "#6aaa64"
             elif fb == "present":
@@ -186,9 +187,9 @@ class WordleApp(tk.Tk):
                 lbl["fg"] = "black"
         for btn in self.key_buttons.values():
             btn.config(bg="SystemButtonFace", fg="black")
-        self.status_label["text"] = f"Round: 1 | Secret word chosen."
         self.info_label["text"] = "Guess the 5-letter word!"
 
 if __name__ == "__main__":
     app = WordleApp()
     app.mainloop()
+    
