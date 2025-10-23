@@ -13,7 +13,7 @@ This is a desktop Wordle (Unlimited) implementation using Python and Tkinter.
 - `Report.pdf` — the project report 
 
 ## How to run
-1. Python is installed.
+1. Python is installed (no extra libraries included)
 2. (Optional) Install dependencies: `pip install -r requirements.txt`
 3. Run: `python main.py`
 
