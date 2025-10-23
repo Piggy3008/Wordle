@@ -12,6 +12,7 @@ Guess the secret 5-letter word in 6 tries — with color feedback for correct le
    cd Wordle
    
 2. **(Optional)** Create a virtual environment:
+   ```bash
     python -m venv venv
     source venv/bin/activate       # on macOS/Linux
     venv\Scripts\activate          # on Windows
